@@ -12,11 +12,14 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
 
     var audioPlayer:AVAudioPlayer!
+    var audioEngine:AVAudioEngine!
+    var audioFile:AVAudioFile!
     var recordedAudio:RecordedAudio!
     
     override func viewDidLoad() {
         
-        // Do any additional setup after loading the view.
+        audioEngine = AVAudioEngine()
+        audioFile = AVAudioFile(forReading: recordedAudio.filePathUrl, error: nil)
     }
 
     
@@ -33,37 +36,50 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playSlow(sender: UIButton) {
-        audioPlayer.enableRate = true
-        audioPlayer.rate = 0.5
-        _playAudio()
+        playVariableAudio(1.0, rate: 0.5)
     }
     
     @IBAction func playFast(sender: UIButton) {
-        audioPlayer.enableRate = true
-        audioPlayer.rate = 2.0
-        _playAudio()
+        playVariableAudio(1.0, rate: 2.0)
+    }
+    
+    @IBAction func playSquirrel(sender: UIButton) {
+        playVariableAudio(1000.0, rate: 1.0)
+    }
+    
+    @IBAction func playVader(sender: UIButton) {
+        playVariableAudio(-1000.0, rate: 1.0)
     }
     
     @IBAction func stopPlaying(sender: UIButton) {
         audioPlayer.stop()
-        
+        audioEngine.stop()
     }
     
-    func _playAudio() {
-        audioPlayer.stop()
-        audioPlayer.prepareToPlay()
-        audioPlayer.currentTime = 0
-        audioPlayer.play()
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    /**
+        Heart of the player - alter pitch and/or rate
+        
+        :param: pitch default 1.0
+        :param: rate  default 1.0
     */
-
+    func playVariableAudio(pitch: Float, rate: Float) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changePitchEffect = AVAudioUnitTimePitch()
+        changePitchEffect.pitch = pitch
+        changePitchEffect.rate = rate
+        audioEngine.attachNode(changePitchEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
+        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        audioPlayerNode.play()
+    }
 }

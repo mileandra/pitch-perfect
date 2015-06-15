@@ -3,17 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "microphone.png"
+      "filename" : "darthvader.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "microphone@2x-iphone.png"
+      "filename" : "darthvader@2x~iphone.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "microphone@3x-iphone.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

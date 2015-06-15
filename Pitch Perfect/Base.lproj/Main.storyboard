@@ -29,19 +29,111 @@
                                     <action selector="startRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AqZ-Tl-Pcd"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdu-3S-OA7">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="got-pZ-zYB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="got-pZ-zYB">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ARO-5b-eev"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdu-3S-OA7">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Press">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Kailasa"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="the">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Kailasa"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="microphone">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Kailasa"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="to">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Kailasa"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="start">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="Kailasa"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="recording">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="LucidaGrande"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-UP-eDX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="550" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RKr-WI-bzh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,45 +145,60 @@
                             <constraint firstItem="pdu-3S-OA7" firstAttribute="top" secondItem="E2V-1X-arQ" secondAttribute="bottom" constant="21" id="M7m-aV-QJ6"/>
                             <constraint firstAttribute="centerX" secondItem="pdu-3S-OA7" secondAttribute="centerX" id="OWb-48-ZuM"/>
                             <constraint firstAttribute="centerX" secondItem="got-pZ-zYB" secondAttribute="centerX" id="PHK-br-DSD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="got-pZ-zYB" secondAttribute="bottom" constant="20" id="ZWf-So-cs7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Soi-UP-eDX" secondAttribute="bottom" constant="20" id="kF5-r6-eDH"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="got-pZ-zYB" secondAttribute="bottom" constant="95" id="kWb-U9-k1l">
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
+                            <constraint firstItem="Soi-UP-eDX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="pfC-7N-gAh"/>
+                            <constraint firstItem="got-pZ-zYB" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="qO0-ij-n6O"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="E2V-1X-arQ"/>
-                                <exclude reference="pdu-3S-OA7"/>
                                 <exclude reference="got-pZ-zYB"/>
+                                <exclude reference="pdu-3S-OA7"/>
+                                <exclude reference="Soi-UP-eDX"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="kWb-U9-k1l"/>
-                                <exclude reference="M7m-aV-QJ6"/>
-                                <exclude reference="OWb-48-ZuM"/>
                                 <exclude reference="02x-md-7lE"/>
                                 <exclude reference="IA6-xC-osE"/>
+                                <exclude reference="M7m-aV-QJ6"/>
+                                <exclude reference="OWb-48-ZuM"/>
+                                <exclude reference="pfC-7N-gAh"/>
                                 <exclude reference="9ZB-54-bkE"/>
                                 <exclude reference="PHK-br-DSD"/>
+                                <exclude reference="qO0-ij-n6O"/>
+                                <exclude reference="ZWf-So-cs7"/>
+                                <exclude reference="kF5-r6-eDH"/>
+                                <exclude reference="kWb-U9-k1l"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="E2V-1X-arQ"/>
-                                <include reference="pdu-3S-OA7"/>
                                 <include reference="got-pZ-zYB"/>
+                                <include reference="pdu-3S-OA7"/>
+                                <include reference="Soi-UP-eDX"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="kWb-U9-k1l"/>
-                                <include reference="M7m-aV-QJ6"/>
-                                <include reference="OWb-48-ZuM"/>
                                 <include reference="02x-md-7lE"/>
                                 <include reference="IA6-xC-osE"/>
+                                <include reference="M7m-aV-QJ6"/>
+                                <include reference="OWb-48-ZuM"/>
+                                <include reference="pfC-7N-gAh"/>
                                 <exclude reference="9ZB-54-bkE"/>
-                                <include reference="PHK-br-DSD"/>
+                                <exclude reference="PHK-br-DSD"/>
+                                <include reference="qO0-ij-n6O"/>
+                                <include reference="ZWf-So-cs7"/>
+                                <include reference="kF5-r6-eDH"/>
+                                <exclude reference="kWb-U9-k1l"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="Rwv-jA-ayh"/>
                     <connections>
+                        <outlet property="pauseButton" destination="Soi-UP-eDX" id="Hsp-Vs-u4c"/>
                         <outlet property="recordButton" destination="E2V-1X-arQ" id="aCv-jT-tSb"/>
                         <outlet property="recordingLabel" destination="pdu-3S-OA7" id="DGe-v1-9iT"/>
                         <outlet property="stopButton" destination="got-pZ-zYB" id="fL1-YZ-n1Y"/>
@@ -141,15 +248,37 @@
                                     <action selector="stopPlaying:" destination="xm6-g2-xqb" eventType="touchUpInside" id="VMz-hU-sfn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrY-g0-Q3p">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Squirrel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSquirrel:" destination="xm6-g2-xqb" eventType="touchUpInside" id="VwW-uE-ghs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAF-IR-OWF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Vader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVader:" destination="xm6-g2-xqb" eventType="touchUpInside" id="SUb-Nr-aQv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25714129029999999" green="0.6687660553" blue="0.97480458920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="QrY-g0-Q3p" firstAttribute="leading" secondItem="4Fp-Oy-GSN" secondAttribute="leadingMargin" constant="30" id="0bn-Fu-PNh"/>
                             <constraint firstAttribute="centerX" secondItem="Re5-vc-iKb" secondAttribute="centerX" id="0e9-Ux-AUK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5wX-XE-wtl" secondAttribute="trailing" constant="28" id="8hs-Q8-Exp"/>
                             <constraint firstItem="aXF-gk-UbP" firstAttribute="top" secondItem="Okf-rh-58U" secondAttribute="bottom" constant="50" id="AS8-Ev-f0h"/>
+                            <constraint firstItem="QrY-g0-Q3p" firstAttribute="top" secondItem="aXF-gk-UbP" secondAttribute="bottom" constant="50" id="Fae-Dd-NJ7"/>
                             <constraint firstAttribute="centerY" secondItem="Re5-vc-iKb" secondAttribute="centerY" id="L5c-7x-i7W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vAF-IR-OWF" secondAttribute="trailing" constant="30" id="WZ8-87-MA4"/>
                             <constraint firstItem="9XT-3L-byg" firstAttribute="top" secondItem="Re5-vc-iKb" secondAttribute="bottom" constant="20" id="Yfb-el-Sv4"/>
                             <constraint firstItem="5wX-XE-wtl" firstAttribute="top" secondItem="Okf-rh-58U" secondAttribute="bottom" constant="50" id="tE1-JK-2eo"/>
+                            <constraint firstItem="vAF-IR-OWF" firstAttribute="top" secondItem="5wX-XE-wtl" secondAttribute="bottom" constant="50" id="xyb-qZ-bPB"/>
                             <constraint firstItem="aXF-gk-UbP" firstAttribute="leading" secondItem="4Fp-Oy-GSN" secondAttribute="leadingMargin" constant="30" id="z6s-qv-Taz"/>
                         </constraints>
                         <variation key="default">
@@ -157,15 +286,21 @@
                                 <exclude reference="aXF-gk-UbP"/>
                                 <exclude reference="5wX-XE-wtl"/>
                                 <exclude reference="Re5-vc-iKb"/>
+                                <exclude reference="QrY-g0-Q3p"/>
+                                <exclude reference="vAF-IR-OWF"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Yfb-el-Sv4"/>
                                 <exclude reference="8hs-Q8-Exp"/>
                                 <exclude reference="tE1-JK-2eo"/>
+                                <exclude reference="0bn-Fu-PNh"/>
+                                <exclude reference="Fae-Dd-NJ7"/>
                                 <exclude reference="0e9-Ux-AUK"/>
                                 <exclude reference="L5c-7x-i7W"/>
                                 <exclude reference="AS8-Ev-f0h"/>
                                 <exclude reference="z6s-qv-Taz"/>
+                                <exclude reference="WZ8-87-MA4"/>
+                                <exclude reference="xyb-qZ-bPB"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -173,15 +308,21 @@
                                 <include reference="aXF-gk-UbP"/>
                                 <include reference="5wX-XE-wtl"/>
                                 <include reference="Re5-vc-iKb"/>
+                                <include reference="QrY-g0-Q3p"/>
+                                <include reference="vAF-IR-OWF"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Yfb-el-Sv4"/>
                                 <include reference="8hs-Q8-Exp"/>
                                 <include reference="tE1-JK-2eo"/>
+                                <include reference="0bn-Fu-PNh"/>
+                                <include reference="Fae-Dd-NJ7"/>
                                 <include reference="0e9-Ux-AUK"/>
                                 <exclude reference="L5c-7x-i7W"/>
                                 <include reference="AS8-Ev-f0h"/>
                                 <include reference="z6s-qv-Taz"/>
+                                <include reference="WZ8-87-MA4"/>
+                                <include reference="xyb-qZ-bPB"/>
                             </mask>
                         </variation>
                     </view>
@@ -211,8 +352,10 @@
     </scenes>
     <resources>
         <image name="Fast" width="100" height="100"/>
-        <image name="Microphone" width="100" height="100"/>
+        <image name="Microphone" width="90" height="100"/>
         <image name="Snail" width="100" height="100"/>
+        <image name="Squirrel" width="100" height="100"/>
         <image name="Stop" width="100" height="100"/>
+        <image name="Vader" width="100" height="100"/>
     </resources>
 </document>

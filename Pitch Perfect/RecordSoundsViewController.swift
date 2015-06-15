@@ -14,6 +14,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     
     var filePath:NSURL?
@@ -24,47 +25,67 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(animated: Bool) {
+        // enable the recording
         recordButton.enabled = true
-        _toggleStopButton(false)
+        
+        // hide the stop button
+        toggleRecordingState(false)
+        
+        initRecorder()
     }
     
-  
-    @IBAction func startRecording(sender: UIButton) {
-        recordingLabel.hidden = false
-        _toggleStopButton(true)
-        recordButton.enabled = false
-        
+    func initRecorder() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-       
+        
         let recordingName = "currentPitchPerfect.wav"
         let pathArray = [dirPath, recordingName]
         filePath = NSURL.fileURLWithPathComponents(pathArray)!
-    
+        
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        
         audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
         audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
+    }
+    
+  
+    /**
+        Start the recording and initialize the recorder and file paths
+        
+        :param: sender Recording Button on the Recording View
+    */
+    @IBAction func startRecording(sender: UIButton) {
+        toggleRecordingState(true)
+        
         audioRecorder.prepareToRecord()
         audioRecorder.record()
     }
 
+
+    /**
+        Stop the recording and save the audio file
+
+        :param: sender UIButton that was pressed (should be the stop button on the recording view
+    */
     @IBAction func stopRecording(sender: UIButton) {
         recordButton.enabled = true
-        recordingLabel.hidden = true
-        _toggleStopButton(false)
+        toggleRecordingState(false)
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
     }
+    
+ 
+    @IBAction func pauseRecording(sender: UIButton) {
+        if (audioRecorder.recording) {
+            audioRecorder.pause()
+            toggleRecordingState(false)
+            recordingLabel.text = "Press the microphone to resume recording"
+        }
+    }
+  
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag) {
@@ -78,17 +99,30 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
  
+    /**
+        Toggle the UI Elements on the Record Screen
     
-    func _toggleStopButton(toggleState: Bool) {
+        :param: toggleState Indicates recordingState
+    */
+
+    func toggleRecordingState(toggleState: Bool) {
         if (toggleState == true) {
             stopButton.hidden = false
             stopButton.enabled = true
+            pauseButton.enabled = true
+            pauseButton.hidden = false
+            recordButton.enabled = false
+            recordingLabel.text = "Recording"
         } else {
             stopButton.hidden = true
             stopButton.enabled = false
+            pauseButton.enabled = false
+            pauseButton.hidden = true
+            recordButton.enabled = true
+            recordingLabel.text = "Press the microphone to start recording"
         }
     }
-
+  
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "PlaySoundsSegue") {
