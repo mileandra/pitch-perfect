@@ -17,6 +17,7 @@ class PlaySoundsViewController: UIViewController {
     var recordedAudio:RecordedAudio!
     
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: recordedAudio.filePathUrl, error: nil)

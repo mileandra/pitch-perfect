@@ -23,6 +23,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         super.viewDidLoad()
     }
     

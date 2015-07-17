@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "snail.png"
+      "filename" : "pause.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "snail@2x-iphone.png"
+      "filename" : "pause@2x-iphone.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "snail@3x-iphone.png"
+      "filename" : "pause@3x-iphone.png"
     }
   ],
   "info" : {
